@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Pessoa p = dataSnapshot.getValue(Pessoa.class);
-                Log.d("DatabasePessoa", p.getNome());
+                Log.d("DatabasePessoa", p.nome);
             }
 
             @Override

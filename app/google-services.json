@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "658274146722",
+    "firebase_url": "https://fir-samplelucas.firebaseio.com",
+    "project_id": "fir-samplelucas",
+    "storage_bucket": "fir-samplelucas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:658274146722:android:1f3e857fef0fb656a37afb",
+        "android_client_info": {
+          "package_name": "br.ifsc.edu.firebasesamplelucas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "658274146722-8d98lgrcpnmqnsgptp3ghe43torc92hq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.ifsc.edu.firebasesamplelucas",
+            "certificate_hash": "bec76724069a30dd491ec36d7ee0be808b79c941"
+          }
+        },
+        {
+          "client_id": "658274146722-j8a5jdc0jh85jctqfreu7lc4sn4abt44.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFP2XG-BAf8nYTNm2sG94A0w8_P5ORbkg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "658274146722-j8a5jdc0jh85jctqfreu7lc4sn4abt44.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

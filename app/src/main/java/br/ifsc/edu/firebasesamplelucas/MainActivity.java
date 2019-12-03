@@ -3,10 +3,8 @@ package br.ifsc.edu.firebasesamplelucas;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -15,12 +13,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
@@ -33,13 +27,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         mAuth = FirebaseAuth.getInstance();
         edLogin = findViewById(R.id.edLogin);
         edSenha = findViewById(R.id.edSenha);
 
         //config realtime
-        firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference();
+//        firebaseDatabase = FirebaseDatabase.getInstance();
+//        databaseReference = firebaseDatabase.getReference();
 //        databaseReference.child("Pessoas").child("id").setValue("Lucas");
 //        Pessoa p = new Pessoa("Odair da Silva","123.000.000-00","M");
 //        Pessoa e = new Pessoa("Lusca da Silva","000.456.000-00","M");
@@ -50,18 +45,18 @@ public class MainActivity extends AppCompatActivity {
 //        databaseReference.child("Pessoas").push().setValue(s);
 //        databaseReference.child("Pessoas").push().setValue(o);
 
-        databaseReference.child("Pessoas").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Pessoa p = dataSnapshot.getValue(Pessoa.class);
-                Log.d("DatabasePessoa", p.nome);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
+//        databaseReference.child("Pessoas").addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                Pessoa p = dataSnapshot.getValue(Pessoa.class);
+//                Log.d("DatabasePessoa", p.nome);
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
 
 
     }
@@ -74,9 +69,15 @@ public class MainActivity extends AppCompatActivity {
     }*/
 
     public void autenticar(View view) {
+        String login = edLogin.getText().toString();
+        String senha = edSenha.getText().toString();
+//        login = "lucashygi@gmail.com";
+//        senha = "123mudar";
+        login = "lucashygi@gmail.com";
+        senha = "123mudar";
         mAuth.signInWithEmailAndPassword(
-                edLogin.getText().toString(),
-                edSenha.getText().toString()
+                login,
+                senha
         ).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -107,5 +108,10 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public void resetarSenha(View view){
+        if(!edLogin.getText().toString().trim().equals(""))
+            mAuth.sendPasswordResetEmail(edLogin.getText().toString());
     }
 }

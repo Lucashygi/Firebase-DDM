@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CadastrarPessoasActivity">
+
+    <EditText
+        android:id="@+id/edNome"
+        android:layout_width="285dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="90dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginBottom="23dp"
+        android:ems="10"
+        android:hint="Nome"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/edCpf"
+        android:layout_width="285dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="62dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginBottom="14dp"
+        android:ems="10"
+        android:hint="CPF"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/edSexo"
+        android:layout_width="285dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="62dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginBottom="21dp"
+        android:ems="10"
+        android:hint="Sexo"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/btnCadastroPessoas"
+        android:layout_width="179dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="62dp"
+        android:onClick="salvarPessoa"
+        android:layout_gravity="center"
+        android:text="Cadastrar Usuário" />
+</LinearLayout>
